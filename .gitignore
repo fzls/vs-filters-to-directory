@@ -1,4 +1,13 @@
 __pycache__/
+.coverage
+coverage.xml
+
+.venv/
+.venv_dev/
+
+build/
+dist/
+vs-filters.exe.spec
 
 .idea/
 
