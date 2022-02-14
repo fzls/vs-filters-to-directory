@@ -54,3 +54,4 @@ repos:
           - tomli
           - types-atomicwrites
           - types-pkg_resources
+          - types-beautifulsoup4==4.10.11
