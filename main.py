@@ -19,5 +19,5 @@ def main():
     filter_to_directory(args.root_dir, args.link_dir_name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

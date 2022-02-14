@@ -23,7 +23,7 @@ def remove_duplicate_filters(filters: List[pathlib.Path]) -> List[pathlib.Path]:
 
 def remove_suffix(s: str, suffix: str) -> str:
     if s.endswith(suffix):
-        s = s[:-len(suffix)]
+        s = s[: -len(suffix)]
 
     return s
 

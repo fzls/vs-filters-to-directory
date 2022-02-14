@@ -2,7 +2,7 @@ _indent_level = 0
 
 
 def indent() -> str:
-    return '\t' * _indent_level
+    return "\t" * _indent_level
 
 
 def inc_indent():

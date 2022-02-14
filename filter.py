@@ -3,9 +3,9 @@ from os import path
 
 import bs4
 
-from debug import debug_print, inc_indent, dec_indent
+from debug import debug_print, dec_indent, inc_indent
 from link import make_link
-from util import remove_duplicate_filters, make_sure_dir_exists
+from util import make_sure_dir_exists, remove_duplicate_filters
 
 
 def filter_to_directory(root_dir: str, link_dir_name: str):
@@ -22,7 +22,7 @@ def filter_to_directory(root_dir: str, link_dir_name: str):
     # 为每个 filters 文件生成对应的目录
     for idx_filter, filter in enumerate(filter_files):
         debug_print(f"{idx_filter + 1}/{len(filter_files)}: 开始处理 {filter}")
-        soup = bs4.BeautifulSoup(filter.read_text(encoding='utf-8'), "lxml")
+        soup = bs4.BeautifulSoup(filter.read_text(encoding="utf-8"), "lxml")
 
         project_dir = path.dirname(filter)
         link_dir = path.join(project_dir, link_dir_name)
