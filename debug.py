@@ -21,8 +21,10 @@ def debug_print(msg, *arg, **kwargs):
 
 def with_indent(func):
     def inner(*args, **kwargs):
-        inc_indent()
-        func(*args, **kwargs)
-        dec_indent()
+        try:
+            inc_indent()
+            func(*args, **kwargs)
+        finally:
+            dec_indent()
 
     return inner
