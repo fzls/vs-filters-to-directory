@@ -34,7 +34,7 @@ def filter_to_directory(root_dir: str, link_dir_name: str, link_type: str = LINK
 @with_indent
 def process_filter(filter, link_dir_name, link_type):
     soup = bs4.BeautifulSoup(filter.read_text(encoding="utf-8"), "lxml")
-    project_dir = path.dirname(filter)
+    project_dir = path.dirname(path.realpath(filter))
     link_dir = path.join(project_dir, link_dir_name)
 
     # 移除之前生成的链接目录
