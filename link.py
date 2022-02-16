@@ -18,9 +18,10 @@ def make_link(link_path: str, link_target: str, common_prefix_len: int = 0, link
 
     make_sure_dir_exists(path.dirname(link_path))
 
-    if path.exists(link_path):
-        os.remove(link_path)
+    # 移除可能存在的旧链接文件
+    os.remove(link_path)
 
+    # 创建新链接
     if link_type == LINK_TYPE_SOFT:
         os.symlink(link_target, link_path)
     else:
