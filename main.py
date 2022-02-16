@@ -2,6 +2,7 @@ import argparse
 
 from filter import filter_to_directory
 from link import LINK_TYPE_SOFT, LINK_TYPE_HARD
+from util import run_as_admin, pause
 
 
 def parse_args():
@@ -18,7 +19,12 @@ def parse_args():
 def main():
     args = parse_args()
 
+    if args.link_type == LINK_TYPE_SOFT:
+        run_as_admin()
+
     filter_to_directory(args.root_dir, args.link_dir_name, args.link_type)
+
+    pause("filter层级链接目录生成完毕")
 
 
 if __name__ == "__main__":
