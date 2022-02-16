@@ -62,7 +62,7 @@ def run_as_admin():
         return False
 
     print("run_as_admin ok, exit current process, actual work will be done by elevated process")
-    exit(0)
+    sys.exit(0)
 
 
 def is_windows():
