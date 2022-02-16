@@ -2,6 +2,7 @@ import ctypes
 import os
 import pathlib
 import platform
+import shutil
 import sys
 from typing import List
 
@@ -78,3 +79,11 @@ def pause(ctx: str = ""):
     else:
         pause_cmd = 'read -r -p "Press Enter to continue..." key'
     os.system(pause_cmd)
+
+
+def remove_directory(directory_path):
+    try:
+        if os.path.isdir(directory_path):
+            shutil.rmtree(directory_path)
+    except:
+        pass
