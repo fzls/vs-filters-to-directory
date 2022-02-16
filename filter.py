@@ -4,11 +4,11 @@ from os import path
 import bs4
 
 from debug import debug_print, dec_indent, inc_indent
-from link import make_link
+from link import make_link, LINK_TYPE_SOFT
 from util import make_sure_dir_exists, remove_duplicate_filters
 
 
-def filter_to_directory(root_dir: str, link_dir_name: str):
+def filter_to_directory(root_dir: str, link_dir_name: str, link_type: str = LINK_TYPE_SOFT):
     # 找到目录（及子目录）中所有的 vc项目 filters 文件
     filter_files = list(pathlib.Path(root_dir).glob("**/*.vcxproj.filters"))
 
@@ -50,7 +50,7 @@ def filter_to_directory(root_dir: str, link_dir_name: str):
                     link_target = path.join(project_dir, source_file_relative_path)
 
                     debug_print(f"item   : {item.attrs['include']}")
-                    make_link(link_path, link_target, common_prefix_len=len(project_dir) + 1)
+                    make_link(link_path, link_target, common_prefix_len=len(project_dir) + 1, link_type=link_type)
 
         dec_indent()
 
