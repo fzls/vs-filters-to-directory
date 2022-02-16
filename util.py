@@ -11,6 +11,9 @@ def remove_duplicate_filters(filters: List[pathlib.Path]) -> List[pathlib.Path]:
     normalized_project_path_set = set()
     unique_filters = []
 
+    # 确保同时存在 xxx_2012, xxx_2019时，版本较新的会在前面
+    filters.sort(reverse=True)
+
     for filter in filters:
         normalized_project_path = str(filter)
         normalized_project_path = remove_suffix(normalized_project_path, ".vcxproj.filters")
