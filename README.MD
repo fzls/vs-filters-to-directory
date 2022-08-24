@@ -48,3 +48,6 @@ optional arguments:
 所以推荐仅用于导航。在clion中想要通过filters快速定位某个模块相关文件，可以打开该链接目录来快速定位
 
 同时，为避免查询符号时出现两个相同的，建议在clion中将链接目录忽略，确保不解析其中的链接文件
+
+### jetbrains ide
+可使用 IDEA Resolve Symlinks 插件来实现在rider、clion中点击软链接时，跳转到实际的文件，方便修改和查看代码
